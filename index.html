@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação 1</title>
+</head>
+<body>
+    <header>
+        <h1>Com Https</h1>
+    </header>
+
+    <input id="meuBotao" type="button" value="Me clique!">
+    <section id="resultado"></section>
+    
+</body>
+
+<script>
+    document.getElementById("meuBotao").onclick = function(e){
+        const conteudo = document.getElementById("resultado")
+        fetch("get/Exemplo.html")
+        .then(resp => resp.text())
+        .then(html => conteudo.innerHTML == "" ? conteudo.innerHTML = html : conteudo.innerHTML = "")
+    }
+
+</script>
+</html>
